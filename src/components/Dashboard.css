@@ -1,98 +1,185 @@
 .dashboard {
   min-height: 100vh;
-  background: #0a0a0a;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  padding: 40px 24px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.dashboard-main {
+.dashboard-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
 }
 
 .dashboard-header {
-  margin-bottom: 3rem;
+  margin-bottom: 32px;
 }
 
 .dashboard-title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+  font-size: 36px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
 }
 
 .dashboard-meta {
   display: flex;
-  gap: 1.5rem;
-  font-size: 0.875rem;
-  color: #999;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
-.dashboard-meta span {
-  position: relative;
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
 }
 
-.dashboard-meta span:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: -0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 12px;
-  background: #333;
+.budget-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.analytics-section {
-  margin-bottom: 3rem;
+.budget-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.budget-progress {
+  flex: 1;
+  max-width: 200px;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.budget-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 10px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-section {
+  margin-bottom: 32px;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px 10px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 3px solid #3b82f6;
+}
+
+.tab-button:hover {
+  background: #f9fafb;
+}
+
+.content-section {
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f3f4f6;
 }
 
 .section-title {
-  font-size: 1.25rem;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.metrics-toggle {
+  padding: 8px 16px;
+  background: #eff6ff;
+  border: 1.5px solid #3b82f6;
+  border-radius: 8px;
+  font-size: 13px;
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid #d97706;
-  display: inline-block;
-}
-
-.posts-section {
-  margin-top: 3rem;
-}
-
-.posts-header {
-  margin-bottom: 2rem;
-}
-
-.posts-tabs {
-  display: flex;
-  gap: 1rem;
-  border-bottom: 1px solid #333;
-}
-
-.posts-tab {
-  background: none;
-  border: none;
-  color: #999;
-  padding: 1rem 1.5rem;
+  color: #1e40af;
   cursor: pointer;
-  font-size: 0.9rem;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.posts-tab:hover {
-  color: #fff;
+.metrics-toggle:hover {
+  background: #dbeafe;
+  transform: translateY(-1px);
 }
 
-.posts-tab.active {
-  color: #fff;
-  border-bottom-color: #d97706;
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.tab-count {
-  background: #222;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  margin-left: 0.5rem;
+.content-section {
+  animation: fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 32px 20px;
+  }
+
+  .dashboard-title {
+    font-size: 32px;
+  }
+
+  .content-section {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 24px 16px;
+  }
+
+  .dashboard-title {
+    font-size: 28px;
+  }
+
+  .dashboard-meta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .content-section {
+    padding: 20px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}

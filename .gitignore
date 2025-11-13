@@ -8,8 +8,8 @@
 # testing
 /coverage
 
-# production
-/build
+# production - COMMENTED OUT SO WE CAN DEPLOY PRE-BUILT FILES
+# /build
 
 # misc
 .DS_Store
