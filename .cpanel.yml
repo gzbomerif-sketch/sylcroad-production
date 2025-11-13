@@ -7,12 +7,16 @@ deployment:
     - /bin/rm -f $DEPLOYPATH/index.html
     - /bin/rm -f $DEPLOYPATH/asset-manifest.json
     - /bin/rm -f $DEPLOYPATH/favicon.ico
-    # Copy new build
-    - /bin/cp -R build/* $DEPLOYPATH
+    # Copy new build files individually
+    - /bin/cp -f build/index.html $DEPLOYPATH/index.html
+    - /bin/cp -f build/asset-manifest.json $DEPLOYPATH/asset-manifest.json
+    - /bin/cp -f build/favicon.ico $DEPLOYPATH/favicon.ico
+    # Copy static directory recursively
+    - /bin/cp -R build/static $DEPLOYPATH/
     # Copy .htaccess for React Router
-    - /bin/cp .htaccess $DEPLOYPATH/.htaccess
+    - /bin/cp -f .htaccess $DEPLOYPATH/.htaccess
     # Copy test file
-    - /bin/cp test.html $DEPLOYPATH/test.html
+    - /bin/cp -f test.html $DEPLOYPATH/test.html
     # Set permissions
     - /bin/chmod 644 $DEPLOYPATH/index.html
     - /bin/chmod 644 $DEPLOYPATH/asset-manifest.json
