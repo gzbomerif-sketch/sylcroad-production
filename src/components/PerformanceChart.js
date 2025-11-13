@@ -11,29 +11,33 @@ const PerformanceChart = () => {
         <div className="chart-legend">
           <div className="legend-item">
             <div className="legend-dot green"></div>
-            <span>259M</span>
+            <span>259M Views</span>
           </div>
           <div className="legend-item">
             <div className="legend-dot purple"></div>
-            <span>62k</span>
+            <span>62k Comments</span>
           </div>
           <div className="legend-item">
             <div className="legend-dot blue"></div>
-            <span>5.1M</span>
+            <span>5.1M Likes</span>
+          </div>
+          <div className="legend-item">
+            <div className="legend-dot orange"></div>
+            <span>2.44% Engagement</span>
           </div>
         </div>
-        <button className="metrics-toggle">Metrics</button>
+        <button className="metrics-toggle">⚙️ Metrics</button>
       </div>
       
       <div className="chart-content">
         <svg className="chart-svg" viewBox="0 0 800 300" preserveAspectRatio="none">
           {/* Background grid */}
           <g className="grid">
-            <line x1="0" y1="50" x2="800" y2="50" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
-            <line x1="0" y1="100" x2="800" y2="100" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
-            <line x1="0" y1="150" x2="800" y2="150" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
-            <line x1="0" y1="200" x2="800" y2="200" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
-            <line x1="0" y1="250" x2="800" y2="250" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
+            <line x1="0" y1="50" x2="800" y2="50" stroke="#f3f4f6" strokeWidth="1" strokeDasharray="4 4"/>
+            <line x1="0" y1="100" x2="800" y2="100" stroke="#f3f4f6" strokeWidth="1" strokeDasharray="4 4"/>
+            <line x1="0" y1="150" x2="800" y2="150" stroke="#f3f4f6" strokeWidth="1" strokeDasharray="4 4"/>
+            <line x1="0" y1="200" x2="800" y2="200" stroke="#f3f4f6" strokeWidth="1" strokeDasharray="4 4"/>
+            <line x1="0" y1="250" x2="800" y2="250" stroke="#f3f4f6" strokeWidth="1" strokeDasharray="4 4"/>
           </g>
 
           {/* Green line (Views) */}
