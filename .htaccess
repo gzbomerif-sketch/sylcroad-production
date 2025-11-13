@@ -2,9 +2,13 @@
   RewriteEngine On
   RewriteBase /
   
-  # Don't rewrite files or directories
+  # Don't rewrite files or directories that exist
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Don't rewrite static files (JS, CSS, images, etc.)
+  RewriteCond %{REQUEST_URI} !^/static/
+  RewriteCond %{REQUEST_URI} !\.(?:css|js|map|jpe?g|png|gif|ico|svg|woff2?)$ [NC]
   
   # Rewrite everything else to index.html to allow React Router to work
   RewriteRule ^ index.html [L]
@@ -14,6 +18,7 @@
 <IfModule mod_mime.c>
   AddType application/javascript .js
   AddType text/css .css
+  AddType application/json .map
 </IfModule>
 
 # Enable GZIP compression
