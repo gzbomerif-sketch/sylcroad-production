@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Calendar, Music } from 'lucide-react';
 import './FilterBar.css';
 
 const FilterBar = ({ timeRange, setTimeRange, platform, setPlatform, creator, setCreator }) => {
@@ -48,7 +49,7 @@ const FilterBar = ({ timeRange, setTimeRange, platform, setPlatform, creator, se
           className={`filter-button ${openDropdown === 'time' ? 'active' : ''}`}
           onClick={() => toggleDropdown('time')}
         >
-          <span className="filter-icon">📅</span>
+          <span className="filter-icon"><Calendar size={16} /></span>
           <span className="filter-label">{timeRange}</span>
           <span className="dropdown-arrow">▼</span>
         </button>
@@ -89,7 +90,7 @@ const FilterBar = ({ timeRange, setTimeRange, platform, setPlatform, creator, se
                 checked={selectedPlatforms.includes('TikTok')}
                 onChange={() => handlePlatformToggle('TikTok')}
               />
-              <span className="platform-icon">🎵</span>
+              <span className="platform-icon"><Music size={16} /></span>
               <span>TikTok</span>
             </label>
             <label className="checkbox-option">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Settings } from 'lucide-react';
 import './PerformanceChart.css';
 
 const PerformanceChart = () => {
@@ -26,7 +27,7 @@ const PerformanceChart = () => {
             <span>2.44% Engagement</span>
           </div>
         </div>
-        <button className="metrics-toggle">⚙️ Metrics</button>
+        <button className="metrics-toggle"><Settings size={16} style={{marginRight: '4px'}} /> Metrics</button>
       </div>
       
       <div className="chart-content">

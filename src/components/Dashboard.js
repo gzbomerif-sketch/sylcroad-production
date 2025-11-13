@@ -7,7 +7,7 @@ import PostsGrid from './PostsGrid';
 import './Dashboard.css';
 
 const Dashboard = () => {
-  console.log('📊 Dashboard component rendering...');
+  console.log('[DASHBOARD] Component rendering...');
   const [timeRange, setTimeRange] = useState('Last 7 Days');
   const [platform, setPlatform] = useState('All Platforms');
   const [creator, setCreator] = useState('All Creators');
