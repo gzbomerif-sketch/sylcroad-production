@@ -2,7 +2,14 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/sylcdvaa/public_html/
+    # Delete old files first
+    - /bin/rm -rf $DEPLOYPATH/static
+    - /bin/rm -f $DEPLOYPATH/index.html
+    - /bin/rm -f $DEPLOYPATH/asset-manifest.json
+    - /bin/rm -f $DEPLOYPATH/favicon.ico
+    # Copy new build
     - /bin/cp -R build/* $DEPLOYPATH
+    # Set permissions
     - /bin/chmod 644 $DEPLOYPATH/index.html
     - /bin/chmod 644 $DEPLOYPATH/asset-manifest.json
     - /bin/chmod -R 755 $DEPLOYPATH/static
