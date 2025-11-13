@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deployment Test</title>
+    <style>
+        body {
+            background: #0a0a0a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 { color: #10b981; }
+        .info { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 20px auto; max-width: 600px; }
+    </style>
+</head>
+<body>
+    <h1>✅ Deployment Working!</h1>
+    <div class="info">
+        <p><strong>If you see this, files are deploying correctly to cPanel.</strong></p>
+        <p>Timestamp: <span id="time"></span></p>
+        <p>JavaScript working: <span id="js-test">❌ No</span></p>
+    </div>
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString();
+        document.getElementById('js-test').textContent = '✅ Yes';
+        document.getElementById('js-test').style.color = '#10b981';
+        console.log('✅ Test HTML loaded and JavaScript is working!');
+    </script>
+</body>
+</html>
+
