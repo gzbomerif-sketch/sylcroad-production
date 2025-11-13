@@ -2,6 +2,10 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/sylcdvaa/public_html/
-    - /bin/cp -R * $DEPLOYPATH
-    - /bin/cp -R .htaccess $DEPLOYPATH 2>/dev/null || true
+    - /bin/npm ci
+    - /bin/npm run build
+    - /bin/cp -R build/* $DEPLOYPATH
+    - /bin/chmod 644 $DEPLOYPATH/index.html
+    - /bin/chmod 644 $DEPLOYPATH/asset-manifest.json
+    - /bin/chmod -R 755 $DEPLOYPATH/static
 

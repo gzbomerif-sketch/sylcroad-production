@@ -1,0 +1,98 @@
+.dashboard {
+  min-height: 100vh;
+  background: #0a0a0a;
+}
+
+.dashboard-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  margin-bottom: 3rem;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.dashboard-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: #999;
+}
+
+.dashboard-meta span {
+  position: relative;
+}
+
+.dashboard-meta span:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 12px;
+  background: #333;
+}
+
+.analytics-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #d97706;
+  display: inline-block;
+}
+
+.posts-section {
+  margin-top: 3rem;
+}
+
+.posts-header {
+  margin-bottom: 2rem;
+}
+
+.posts-tabs {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.posts-tab {
+  background: none;
+  border: none;
+  color: #999;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.posts-tab:hover {
+  color: #fff;
+}
+
+.posts-tab.active {
+  color: #fff;
+  border-bottom-color: #d97706;
+}
+
+.tab-count {
+  background: #222;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
