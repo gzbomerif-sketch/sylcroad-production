@@ -1,7 +1,8 @@
 .header {
-  background: #111;
-  border-bottom: 1px solid #222;
-  padding: 1.25rem 2rem;
+  background: #ffffff;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 20px 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .header-content {
@@ -18,10 +19,15 @@
 }
 
 .logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+  color: #1f2937;
   margin: 0;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .logo-right {
@@ -30,8 +36,32 @@
 }
 
 .brand-text {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #999;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 8px 16px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.brand-text:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  .brand-text {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
